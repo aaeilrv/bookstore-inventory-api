@@ -16,6 +16,8 @@ This project implements a backend system for a bookstore that needs to manage bo
 
 - Docker Compose
 
+- .env file (must copy it in the root directory)
+
   
 
 ### Build and Run with Docker
