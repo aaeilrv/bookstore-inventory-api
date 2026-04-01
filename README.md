@@ -22,19 +22,16 @@ This project implements a backend system for a bookstore that needs to manage bo
 
 ### Build and Run with Docker
 
-  
-
+Steps to run the project: 
 ```bash
-# Build the image
-docker  build  -t  bookstore-api  .
-```
+# 1. Build:
+docker compose up --build
+docker exec bookstore-web python manage.py migrate
 
-  
-```bash
-# Run the container
-docker  run  -p  8000:8000  --env-file  .env  bookstore-api
+#2. Execution:
+docker compose up
+
 ```
-  
 
 ### Docker Compose
 ```bash
@@ -62,18 +59,6 @@ docker  compose  logs  -f
 ```bash
 # Rebuild and start
 docker  compose  up  --build
-```
-
-### Migrations
-
-```bash
-# Make migrations
-docker exec bookstore-web python manage.py makemigrations
-```
-
-```bash
-# Migrate
-docker exec bookstore-web python manage.py migrate
 ```
   
 
