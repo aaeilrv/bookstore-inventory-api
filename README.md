@@ -62,10 +62,14 @@ docker  compose  logs  -f
 # Rebuild and start
 docker  compose  up  --build
 ```
-  
 
-## Endpoints
+## API Documentation
 
+### Base URL
+```bash
+http://localhost:8000/api/
+```
+### Endpoints
   
 | Method | Endpoint | Description| 
 |--|--|--|
@@ -77,4 +81,3 @@ docker  compose  up  --build
 |  **GET**  |  /books/search/?category={category}/  |  Get  books  by  category  |
 |  **GET**  |  /books/search/?threshold={threshold}/|Get  books  with  stock  lower  than  specified  threshold|
 |  **POST**  |  /books/{id}/calculate-price/  |  Calculate  suggested  selling  price  for  a  book  |
-
