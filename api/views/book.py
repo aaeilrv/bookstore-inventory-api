@@ -23,10 +23,10 @@ class BookViewSet(viewsets.ModelViewSet):
 
         category = request.query_params.get('category', None)
 
-        if category is None:
+        if not category or category.strip() == "":
             return Response({
-                    "error": "Category parameter cannot be empty."
-                }, status=status.HTTP_400_BAD_REQUEST)
+                "error": "Category parameter cannot be empty."
+            }, status=status.HTTP_400_BAD_REQUEST)
 
         books = BookService.search_by_category(category)
 
@@ -41,7 +41,7 @@ class BookViewSet(viewsets.ModelViewSet):
 
         threshold = request.query_params.get('threshold', None)
 
-        if threshold is None:
+        if not threshold or threshold.strip() == "":
             return Response({
                 "error": "Threshold parameter cannot be empty."
             }, status=status.HTTP_400_BAD_REQUEST)

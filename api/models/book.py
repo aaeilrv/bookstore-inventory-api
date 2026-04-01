@@ -9,7 +9,7 @@ class Book(models.Model):
     author=models.CharField(max_length=255)
     isbn=models.CharField(max_length=50, unique=True)
     cost_usd=models.FloatField()
-    selling_price_local=models.FloatField()
+    selling_price_local=models.FloatField(null=True, blank=True)
     stock_quantity=models.IntegerField()
     category=models.CharField(max_length=50)
     supplier_country=models.CharField(max_length=125)
