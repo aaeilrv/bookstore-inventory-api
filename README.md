@@ -27,3 +27,13 @@ docker-compose down
 ```
 http://localhost:8000/api/
 ```
+
+### Endpoints
+[POST] */books/*: Creates book
+[GET] */books/*: Retrieves all the books
+[GET] */books/{id}/*: Retrieves book by ID
+[PUT] */books/{id}/*: Updates book
+[DELETE] */books/{id}/*: Deletes book
+[GET] */books/search?category={category}/*: Gets books by category 
+[GET] */books/search?threshold={threshold}/*: Gets book with stock lower than specified threshold 
+[POST] */books/{id}/calculate-price/* Calculates suggested selling price for book
