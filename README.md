@@ -19,46 +19,33 @@ This project implements a backend system for a bookstore that needs to manage bo
 - .env file (must copy it in the root directory)
 
   
+## How to run the project?
 
-### Build and Run with Docker
 
-Steps to run the project: 
+### 1. Run the project for the first time:
+Make a build  and migrate the already existant migrations
 ```bash
-# 1. Build:
 docker compose up --build
 docker exec bookstore-web python manage.py migrate
-
-#2. Execution:
+```
+  ### 2. Execute the project any time:
+Done to run the project if it hasn't had any changes.
+```bash
 docker compose up
-
 ```
 
-### Docker Compose
+### 3. Build:
+Must be done anytime there are changes in the code.
 ```bash
-# Start all services
-docker  compose  up
-```
-
-
-```bash
-# Stop all services
-docker  compose  down
-```
-
-  
-```bash
-# Start services in detached mode
-docker  compose  up  -d
-```
-
-```bash
-# View logs
-docker  compose  logs  -f
+docker compose up --build
 ```
   
+
+### 4.  Migrate:
+Must be done each time thre are changes in the models.
 ```bash
-# Rebuild and start
-docker  compose  up  --build
+docker exec bookstore-web python manage.py makemigrations
+docker exec bookstore-web python manage.py migrate
 ```
   
 
